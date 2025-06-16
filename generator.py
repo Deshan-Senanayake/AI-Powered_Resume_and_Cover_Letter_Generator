@@ -1,5 +1,6 @@
 from transformers import pipeline
 from templates import generate_resume_prompt, generate_cover_letter_prompt
+from pdf_utils import save_as_pdf
 
 generator = pipeline("text-generation", model="gpt2")
 
@@ -11,7 +12,10 @@ def get_resume_and_cover_letter(name, role, skills, experience, education, achie
     resume_prompt = generate_resume_prompt(name, role, skills, experience, education, achievements, tone)
     cover_prompt = generate_cover_letter_prompt(name, role, skills, experience, tone)
 
-    resume = generate_text(resume_prompt)
-    cover_letter = generate_text(cover_prompt)
+    resume = generate_text(resume_prompt).strip()
+    cover = generate_text(cover_prompt).strip()
 
-    return resume.strip(), cover_letter.strip()
+    resume_file = save_as_pdf(resume, "resume", "Generated Resume")
+    cover_file = save_as_pdf(cover, "cover_letter", "Generated Cover Letter")
+
+    return resume, cover, resume_file, cover_file
