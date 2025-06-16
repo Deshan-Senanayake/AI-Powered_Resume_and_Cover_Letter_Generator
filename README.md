@@ -1,4 +1,4 @@
-===================================        AI-Powered Resume & Cover Letter Generator              ===================================
+============================        AI-Powered Resume & Cover Letter Generator              ===========================
 
 
 What It Does:
@@ -22,7 +22,7 @@ Tech Stack:
 Optional: Save outputs as PDFs using fpdf or pdfkit
 
 
-==================================         Overview of What We’ll Build              ===================================
+==================================         Overview of What I Built              ===================================
 
 What It Does:
 An app that asks the user for:
