@@ -48,6 +48,8 @@ And generates:
   
   A professional cover letter
 
+  Downlodable
+
 ===============       Install required libraries          ==================
 
 
@@ -56,6 +58,8 @@ pip install gradio transformers
 pip install torch
 
 pip install "huggingface_hub[hf_xet]"
+
+pip install fpdf
 
 
 
@@ -70,4 +74,4 @@ ai_resume_generator/
 
 ├── templates.py
 
-├── venv/ (optional)
+├── pdf_utils.py
